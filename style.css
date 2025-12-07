@@ -1,0 +1,168 @@
+/* 전체 기본 설정 */
+/* =======================
+   Global layout & fonts
+   ======================= */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #000000; /* 전체 배경 블랙 */
+  color: #ffffff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow: hidden;
+}
+
+/* 상단 헤더 (TOOLS — WIGGLE TYPE / wiggle type) */
+
+.app-header-left,
+.app-header-center {
+  position: fixed;
+  top: 8px;
+  z-index: 20;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #aaaaaa;
+  pointer-events: none;  /* 캔버스/슬라이더 클릭 안 가리게 */
+}
+
+.app-header-left {
+  left: 12px;
+  font-weight: 500;
+}
+
+.app-header-center {
+  left: 50%;
+  transform: translateX(-50%);
+  color: #cccccc;
+  font-weight: 500;
+}
+
+/* 오른쪽 패널 영역 배경 (DIA 툴 패널 느낌) */
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 260px;               /* 패널 폭 */
+  background: #000000;
+  border-left: 1px solid #222222;
+  z-index: -1;                /* 캔버스/DOM 뒤쪽 */
+}
+
+/* 캔버스는 블록으로 꽉 차게 */
+
+canvas, #defaultCanvas0 {
+  display: block;
+}
+
+/* =======================
+   Right panel – typography
+   ======================= */
+
+/* 섹션 타이틀 (TYPE SETTING, MORPH, COLOR...) */
+.panel-section-title {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #777777;
+  margin: 0;
+}
+
+/* 작은 라벨 (fontSize, warpAmount, speed 등) */
+.panel-label {
+  font-size: 10px;
+  color: #aaaaaa;
+}
+
+/* 텍스트 인풋 */
+.panel-input {
+  font-size: 11px;
+  font-family: inherit;
+  padding: 2px 4px;
+  background: #111111;
+  border: 1px solid #333333;
+  color: #ffffff;
+}
+
+/* 슬라이더 공통 스타일 */
+.panel-slider[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 170px;
+  height: 3px;
+  background: #333333;
+  outline: none;
+  border-radius: 2px;
+}
+
+/* 슬라이더 손잡이 */
+.panel-slider[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #3e8fff;   /* DIA 느낌 파란 손잡이 */
+  cursor: pointer;
+}
+
+/* Firefox */
+.panel-slider[type="range"]::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #3e8fff;
+  cursor: pointer;
+}
+
+/* 컬러 피커 */
+.panel-color[type="color"] {
+  width: 28px;
+  height: 16px;
+  padding: 0;
+  border: 1px solid #555555;
+  background: #111111;
+}
+
+/* 체크박스 + 라벨 */
+.panel-checkbox {
+  font-size: 10px;
+  color: #aaaaaa;
+}
+
+/* 체크박스 input 자체 조금만 키우기 */
+.panel-checkbox input[type="checkbox"] {
+  transform: scale(0.9);
+  margin-right: 4px;
+}
+
+#control-panel {
+  /* 여기서도 전체 폰트 / 색 조절 가능 */
+}
+
+.panel-section-title {
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.panel-input {
+  padding: 4px 6px;
+  border: none;
+  outline: none;
+}
+
+.panel-slider {
+  -webkit-appearance: none;
+}
+
+.panel-color {
+  border: none;
+}
+
+.panel-checkbox {
+  font-size: 12px;
+}
+
